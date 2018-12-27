@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const testController = require('../controllers/test.controller.js')
+const awsController = require('../controllers/aws.controller.js')
 
 var aws = require('aws-sdk'), // ^2.2.41
     multer = require('multer'); // "multer": "^1.1.0"
@@ -18,8 +18,8 @@ aws.config.update({
 const upload = multer({ dest: 'images/', limits: { fileSize: 10000000 } });
 
 
-router.post('/upload', upload.any(), testController.uploadpic);
+router.post('/upload', upload.any(), awsController.uploadpic);
 
-router.get('/', testController.test);
+router.get('/', awsController.test);
 
 module.exports = router;

@@ -8,7 +8,7 @@ var AWS = require('aws-sdk');
 
 exports.test = function (req, res) {
   res.render('index', {
-    title: 'Test',
+    title: 'This is an example of aws s3 bucket',
   });
 }
 
@@ -34,7 +34,7 @@ exports.uploadpic = function (req, res) {
 
                     res.status(500).send(err);
                 } else {
-                    res.status(200).end("success.");
+                    res.status(200).end("File upload: success.");
                 }
             });
         });
